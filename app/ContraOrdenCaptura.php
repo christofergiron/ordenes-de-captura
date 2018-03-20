@@ -10,9 +10,9 @@ class ContraOrdenCaptura extends Model
   protected $table = "contra_ordenes_capturas";
 //si no es una solicitud, herencia de documento
 // y si es herencia de documento relacion con los usuarios
-public function solicitud()
+public function documento()
 {
-      return $this->morphOne(Solicitud::class, 'solicitable');
+  return $this->morphOne(Documento::class, 'tipoable');
   }
 
 public function orden_captura()

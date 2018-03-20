@@ -24,10 +24,20 @@ protected $table = "ordenes_capturas";
         return $this->belongsTo(Expediente::class, 'id_expediente');
     }
 
-  public function juez()
+  public function etapa()
   {
-      return $this->belongsTo(Juez::class, 'id_juez');
+      return $this->belongsTo(Etapa::class, 'id_etapa');
     }
+
+  public function audiencia()
+  {
+      return $this->belongsTo(Audiencia::class, 'id_audiencia');
+    }
+
+  public function juez()
+    {
+      return $this->belongsTo(Juez::class, 'id_juez');
+      }
 
   public function delitos()
   {
