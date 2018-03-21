@@ -44,9 +44,4 @@ protected $table = "ordenes_capturas";
         return $this->HasMany(OrdenCapturaDelito::class, 'id_orden_captura');
     }
 
-  public function estados()
-  {
-        return $this->HasMany(OrdenCapturaEstado::class, 'id_orden_captura');
-    }
-
 }

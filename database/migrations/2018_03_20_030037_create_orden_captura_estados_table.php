@@ -18,7 +18,8 @@ class CreateOrdenCapturaEstadosTable extends Migration
             $table->integer('id_orden_captura');
             $table->integer('id_contra_orden')->nullable();
             $table->integer('id_funcionario');
-            $table->string('estado');
+            $table->string('estado_antiguo');
+            $table->string('estado_nuevo');
             $table->DateTime('fecha');
             $table->string('motivo');
             $table->boolean('deleted')->default(false);
