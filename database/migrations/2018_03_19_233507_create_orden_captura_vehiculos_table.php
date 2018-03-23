@@ -16,6 +16,7 @@ class CreateOrdenCapturaVehiculosTable extends Migration
         Schema::create('ordenes_capturas_vehiculos', function (Blueprint $table) {
             $table->increments('id');
             $table->string('observaciones')->nullable();
+            $table->string('workflow_state')->nullable();
             $table->boolean('deleted')->default(false);
             $table->timestamps();
         });

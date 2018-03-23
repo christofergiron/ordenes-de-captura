@@ -14,8 +14,8 @@ protected $table = "ordenes_capturas_delitos";
         return $this->belongsTo(OrdenCaptura::class, 'id_orden_captura');
     }
 
-  public function delitos()
-  {
-        return $this->belongsTo(Delito::class, 'id_delito');
-    }
+  //public function delitos()
+  //{
+  //      return $this->belongsTo(Delito::class, 'id_delito');
+  //  }
 }

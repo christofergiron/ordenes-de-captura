@@ -19,12 +19,11 @@ class CreateOrdenCapturasTable extends Migration
             $table->integer('ordenable_id')->nullable();
             $table->DateTime('fecha_creacion');
             $table->string('estado');
-            $table->string('workflow_state')->nullable();
             $table->integer('id_expediente');
-            $table->integer('id_etapa')->nullable();
-            $table->integer('id_audiencia')->nullable();
+            //dejemos estos 2 campos string por mientras
+            $table->string('id_etapa')->nullable();
+            $table->string('id_audiencia')->nullable();
             $table->integer('id_juez')->nullable();
-            $table->string('descripcion')->nullable();
             $table->boolean('deleted')->default(false);
             $table->timestamps();
         });

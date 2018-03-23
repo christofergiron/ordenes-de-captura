@@ -13,12 +13,13 @@ class CreateOrdenCapturaEstadosTable extends Migration
      */
     public function up()
     {
+      //cambio, pensa un poco mas en el trato de estos cambios, por ahora no la utilices
         Schema::create('orden_captura_estados', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('id_orden_captura');
             $table->integer('id_contra_orden')->nullable();
             $table->integer('id_funcionario');
-            $table->string('estado_antiguo');
+            $table->string('estado_antiguo')->nullable();
             $table->string('estado_nuevo');
             $table->DateTime('fecha');
             $table->string('motivo');

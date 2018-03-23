@@ -16,7 +16,14 @@ class CreateOrdenCapturaDelitosTable extends Migration
         Schema::create('ordenes_capturas_delitos', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('id_orden_captura');
-            $table->integer('id_delito');
+            //$table->integer('id_delito');
+            $table->string('tipo_delito');
+            $table->string('delito');
+            //en caso de que sea una persona natural
+            $table->integer('id_victima')->nullable();
+            //este es string porque puede ser tambien contra personas juridicas
+            $table->string('perjudicado');
+            $table->string('descripcion')->nullable();
             $table->boolean('deleted')->default(false);
             $table->timestamps();
         });
