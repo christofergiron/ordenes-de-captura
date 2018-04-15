@@ -15,23 +15,15 @@ class CreateSolicitudContraOrdensTable extends Migration
     {
         Schema::create('solicitudes_contra_ordenes', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('id_dependencia');
-            $table->DateTime('fecha_creacion');
-            $table->string('asunto');
-            $table->integer('id_persona_natural')->nullable();
-            $table->integer('id_persona_juridica')->nullable();
-            $table->LongText('objeto_citacion');
-            $table->string('estado');
-            $table->integer('id_lugar');
-            //necesito tener algun otro campo para saber en que tabla busco este valor o que sea string
-            $table->string('solicitado_por');//la persona que solicito la citacion
+            $table->integer('id_orden_captura');
+            $table->integer('id_expediente');
+            $table->integer('id_persona');//llave foranea de imputado
+            $table->integer('id_contra_orden')->nullable();
+            $table->DateTime('fecha_aprovacion')->nullable();
+            $table->DateTime('fecha_rechazo')->nullable();
+            $table->string('razon_rechazo')->nullable();
+            $table->string('workflow_state')->nullable();
             $table->string('motivo');
-            //no estoy muy seguro de este id citacion, puede ser un texto mejor
-            $table->integer('id_lugar_citacion');
-            $table->string('dia_citacion');
-            $table->Date('fecha_citacion');
-            $table->Time('hora_citacion');
-            $table->string('prevencion');
             $table->boolean('deleted')->default(false);
             $table->timestamps();
         });
