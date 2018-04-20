@@ -18,4 +18,14 @@ protected $table = "solicitudes_contra_ordenes";
     {
           return $this->hasOne(OrdenCaptura::class, 'id_orden_captura');
       }
+
+      public function juez()
+       {
+        return $this->hasOne(Juez::class, 'id_juez');
+          }
+
+      public function fiscal()
+        {
+        return $this->hasOne(Juez::class, 'id_fiscal');
+          }
 }
